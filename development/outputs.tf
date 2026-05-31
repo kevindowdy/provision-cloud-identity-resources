@@ -22,3 +22,13 @@ output "github_actions_deploy_policy_arn" {
   value       = module.github_actions_deploy_policy.policy_arn
   description = "ARN of the GitHub Actions deploy policy."
 }
+
+output "lambda_geo_policy_arn" {
+  value       = module.lambda_geo_policy.policy_arn
+  description = "ARN of the Lambda geo policy."
+}
+
+output "lambda_ses_policy_arn" {
+  value       = module.lambda_ses_policy.policy_arn
+  description = "ARN of the Lambda SES policy."
+}

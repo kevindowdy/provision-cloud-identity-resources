@@ -12,10 +12,22 @@ variable "lambda_role_name" {
   description = "Name of the Lambda execution role."
 }
 
+variable "lambda_geo_policy_name" {
+  type        = string
+  default     = "dev-lambda-geo-policy"
+  description = "Name of the IAM policy granting Amazon Location Services access to the Lambda role."
+}
+
+variable "lambda_ses_policy_name" {
+  type        = string
+  default     = "dev-lambda-ses-policy"
+  description = "Name of the IAM policy granting SES send access to the Lambda role."
+}
+
 variable "lambda_extra_policy_arns" {
   type        = list(string)
   default     = []
-  description = "Additional managed policy ARNs to attach to the Lambda role beyond AWSLambdaBasicExecutionRole."
+  description = "Additional managed policy ARNs to attach to the Lambda role beyond the geo and SES policies."
 }
 
 # ── GitHub Actions role ──────────────────────────────────────────────────────
